@@ -1,5 +1,10 @@
 "use strict";
 
+// inpu: get the cost
+// output: get the downPayment
+// process: i will check the cost,and multiply the percentage 
+//         with cost and add the flat downpayment
+
 function calcDownpayment(cost) {
 
     let downPayment = 0;
