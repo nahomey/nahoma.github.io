@@ -14,8 +14,8 @@ function sumDigits(input) {
 }
 
 console.log(sumDigits(1234));
-console.log(102);
-console.log(8);
+console.log(sumDigits(102));
+console.log(sumDigits(8));
 
 // =======================
 
