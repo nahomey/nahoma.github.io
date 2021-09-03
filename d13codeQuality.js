@@ -14,7 +14,7 @@ function isVowel(char) {
         return false;
     }
 }
-
+//here is a change in code quality ...
 /**
  * 
  * @param{String} salaried to be checked 
