@@ -2,7 +2,7 @@
 
 /* You need the module.exports when testing in node.  Comment it out when you send your file to the browser
  */
-module.exports = { maxOfThree, sum, multiply, findLongestWord, reverseArray, reverseArrayInPlace }; //add all of your function names here that you need for the node mocha tests
+module.exports = { maxOfThree, sum, multiply, findLongestWord, reverseArray, reverseArrayInPlace, scoreExams, generateArray }; //add all of your function names here that you need for the node mocha tests
 
 /**
  * 
@@ -33,7 +33,6 @@ function sum(arr) {
     return tot;
 }
 
-
 /**
  * 
  * @param {Array} arr of numbers
@@ -49,7 +48,8 @@ function multiply(arr) {
 
 }
 /**
- * 
+ * @{arr} array will the the input 
+ * @{str} longest word will be returned
  */
 
 
@@ -95,4 +95,38 @@ function reverseArrayInPlace(arr) {
     }
     return arr;
 }
-//console.log(reverseArrayInSamePlace(["A", "B", "C"]));
+/**
+ * @param{number} students anwer
+ * @param{number} answeres that are correct
+ * @param{number} count of correct answers
+ * 
+ */
+function scoreExams(studentAnswers, correctAnswers) {
+    let correct = [];
+    for (let i = 0; i < studentAnswers.length; i++) {
+        let count = 0;
+        for (let j = 0; j < correctAnswers[i].length; j++) {
+            if (studentAnswers[[i][j]] === correctAnswers[j]) {
+                count++;
+            }
+        }
+        correct[i] = count;
+    }
+    return correct;
+}
+
+
+
+
+function generateArray(num1, num2) {
+    let multiArray = [];
+    let index = 1;
+    for (let i = 0; i < num1; i++) {
+        let array = [];
+        for (let j = 0; j < num2; j++) {
+            array.push(index);
+            index++;
+        }
+        multiArray.push(array);
+    }
+}
