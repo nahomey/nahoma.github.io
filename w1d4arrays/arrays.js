@@ -47,12 +47,12 @@ function multiply(arr) {
     return tot;
 
 }
+
 /**
- * @{arr} array will the the input 
- * @{str} longest word will be returned
+ * 
+ * @param {array} arr will the the input 
+ * @returns {string} longest word 
  */
-
-
 function findLongestWord(arr) {
     let longest = arr[0].length;
     for (let i = 0; i < arr.length; i++) {
@@ -62,13 +62,12 @@ function findLongestWord(arr) {
     }
     return longest;
 }
-console.log(findLongestWord(["abel", "nahom", " azamit"]));
+
 /**
  * 
- * @param {arr} array to be reversed 
- * @returns (arr) reversed array
+ * @param {array} arr to be reversed 
+ * @returns {arr} reversed array
  */
-
 function reverseArray(arr) {
     let reversed = [];
     for (let i = arr.length - 1; i >= 0; i--) {
@@ -76,12 +75,11 @@ function reverseArray(arr) {
     }
     return reversed;
 }
-console.log(reverseArray(["A", "B", "C"]));
 
 /**
  * 
- * @param {arr} array to be reversed in same array
- * @returns {arr} reversed array in same place
+ * @param {arr}  arr input
+ * @returns {arr} returns reversed array in same place
  */
 function reverseArrayInPlace(arr) {
     let temp = [];
@@ -96,9 +94,10 @@ function reverseArrayInPlace(arr) {
     return arr;
 }
 /**
- * @param{number} students anwer
- * @param{number} answeres that are correct
- * @param{number} count of correct answers
+ * 
+ * @param {number} studentAnswers input 
+ * @param {number} correctAnswers that are correct
+ * @returns {number} count of correct answers
  * 
  */
 function scoreExams(studentAnswers, correctAnswers) {
@@ -114,10 +113,12 @@ function scoreExams(studentAnswers, correctAnswers) {
     }
     return correct;
 }
-
-
-
-
+/**
+ * 
+ * @param {number} num1 input1
+ * @param {number} num2 input2
+ * @returns {array} array is returned 
+ */
 function generateArray(num1, num2) {
     let multiArray = [];
     let index = 1;
@@ -129,4 +130,5 @@ function generateArray(num1, num2) {
         }
         multiArray.push(array);
     }
+    return multiArray;
 }
