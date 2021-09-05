@@ -1,6 +1,6 @@
 "use strict";
 
-
+mocha.setup({ ignoreLeaks: true });
 /* You need the assert and function name declarations to test in node.  
 Comment these out when you send it to the browser with the index.html mocha setup page.
 */
