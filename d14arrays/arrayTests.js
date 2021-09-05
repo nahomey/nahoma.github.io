@@ -1,11 +1,12 @@
 "use strict";
 
-// mocha.setup({ ignoreLeaks: true });
 /* You need the assert and function name declarations to test in node.  
 Comment these out when you send it to the browser with the index.html mocha setup page.
 */
-//const assert = require("assert"); //always need this with node
-// const myExports = require("./arrays"); //with node need the name of your file with your functions here
+// //const assert = require("assert");
+//always need this with node
+// const myExports = require("./arrays");
+//with node need the name of your file with your functions here
 // const maxOfThree = myExports.maxOfThree; //do this for all of the functions used in the Mocha tests
 // const multiply = myExports.multiply;
 // const sum = myExports.sum;
@@ -14,7 +15,6 @@ Comment these out when you send it to the browser with the index.html mocha setu
 // const reverseArrayInPlace = myExports.reverseArrayInPlace;
 // const scoreExams = myExports.scoreExams;
 // const generateArray = myExports.generateArray;
-
 
 /* global assert maxOfThree sum multiply findLongestWord reverseArray reverseArrayInPlace scoreExams generateArray */
 
@@ -96,7 +96,7 @@ Arrays have a reverse method that changes the array by inverting the order in wh
 reverseArrayInPlace. The first, reverseArray, takes an array as argument and produces a new array that has the same elements in the inverse order. The second, 
 reverseArrayInPlace, does what the reverse method does: it modifies the array given as argument by reversing its elements. Neither may use the standard reverse method. 
 */
-describe("reverseArray, reverseArrayInPlace", function() {
+describe("reverseArray", function() {
     it("tests reverseArray odd number elements", function() {
         assert.deepEqual(reverseArray(["A", "B", "C"]), ["C", "B", "A"]);
     });
