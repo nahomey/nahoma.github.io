@@ -6,18 +6,21 @@ module.exports = { maxOfThree, sum, multiply, findLongestWord, reverseArray, rev
 
 /**
  * 
- * @param {number} aA1 is a number
- * @param {number} bB1 is a number 
- * @param {number} cC1 is a number
+ * @param {number} num1 is a number
+ * @param {number} num2 is a number 
+ * @param {number} num3 is a number
  * @returns {number} largest of a, b, c
  */
-function maxOfThree(aA1, bB1, cC1) {
-    if (aA1 >= bB1 && aA1 >= cC1) {
-        return aA1;
-    } else if (bB1 >= aA1 && bB1 >= cC1) {
-        return bB1;
-    } else
-        return cC1;
+function maxOfThree(num1, num2, num3) {
+    if (num1 > num2 && num1 > num3) {
+        return num1;
+    } else if ((num2 > num1 && num2 > num3) || num2 === num1 || num2 === num3) {
+        return num2;
+    } else if ((num3 > num1 && num3 > num2) || num3 === num1 || num3 === num2) {
+        return num3;
+    } else {
+        return "not valid";
+    }
 }
 
 /**
@@ -101,17 +104,18 @@ function reverseArrayInPlace(arr) {
  * 
  */
 function scoreExams(studentAnswers, correctAnswers) {
-    let correct = [];
+    const result = [];
     for (let i = 0; i < studentAnswers.length; i++) {
-        let count = 0;
-        for (let j = 0; j < correctAnswers[i].length; j++) {
-            if (studentAnswers[[i][j]] === correctAnswers[j]) {
-                count++;
+        let counter = 0;
+        for (let j = 0; j < studentAnswers[i].length; j++) {
+            if (correctAnswers[j] === studentAnswers[i][j]) {
+                counter++;
             }
         }
-        correct[i] = count;
+        result[i] = counter;
     }
-    return correct;
+
+    return result;
 }
 /**
  * 
