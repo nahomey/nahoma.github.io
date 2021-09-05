@@ -1,24 +1,24 @@
 "use strict";
 
 /* You need the module.exports when testing in node.  Comment it out when you send your file to the browser
- */
-// module.exports = { maxOfThree, sum, multiply, findLongestWord, reverseArray, reverseArrayInPlace, scoreExams, generateArray };
+*/
+//module.exports = { maxOfThree, sum, multiply, findLongestWord, reverseArray, reverseArrayInPlace, scoreExams, generateArray };
 //add all of your function names here that you need for the node mocha tests
 
 /**
  * 
- * @param {number} num1 is a number
- * @param {number} num2 is a number 
- * @param {number} num3 is a number
+ * @param {number} a is a number
+ * @param {number} b is a number 
+ * @param {number} c is a number
  * @returns {number} largest of a, b, c
  */
-function maxOfThree(num1, num2, num3) {
-    if (num1 > num2 && num1 > num3) {
-        return num1;
-    } else if ((num2 > num1 && num2 > num3) || num2 === num1 || num2 === num3) {
-        return num2;
-    } else if ((num3 > num1 && num3 > num2) || num3 === num1 || num3 === num2) {
-        return num3;
+function maxOfThree(a, b, c) {
+    if (a > b && a > c) {
+        return a;
+    } else if ((b > a && b > c) || b === a || b === c) {
+        return b;
+    } else if ((c > a && c > b) || c === a || c === b) {
+        return c;
     } else {
         return "not valid";
     }
@@ -37,6 +37,7 @@ function sum(arr) {
     return tot;
 }
 
+
 /**
  * 
  * @param {Array} arr of numbers
@@ -44,65 +45,60 @@ function sum(arr) {
  */
 function multiply(arr) {
     let tot = 1;
-    for (const number of arr) {
-        tot *= number;
+    for (let i = 0; i < arr.length; i++) {
+        tot *= arr[i];
     }
 
     return tot;
 
 }
-
 /**
  * 
- * @param {array} arr will the the input 
- * @returns {string} longest word 
+ * @param {Array} arr words
+ * @return{string} maximum length word.
  */
 function findLongestWord(arr) {
-    let longest = arr[0].length;
+    let max = 0;
     for (let i = 0; i < arr.length; i++) {
-        if (arr[i].length > longest) {
-            longest = arr[i].length;
+        if (arr[i].length > max) {
+            max = arr[i].length;
         }
     }
-    return longest;
+    return max;
 }
-
 /**
  * 
- * @param {array} arr to be reversed 
- * @returns {arr} reversed array
+ * @param {Array} arr of any.
+ * @returns{Array} reversed array.
  */
 function reverseArray(arr) {
-    let reversed = [];
+    let j = 0;
+    const reversedArray = [];
     for (let i = arr.length - 1; i >= 0; i--) {
-        reversed.push(arr[i]);
+        reversedArray[j] = arr[i];
+        j++;
     }
-    return reversed;
+    return reversedArray;
 }
 
 /**
  * 
- * @param {arr}  arr input
- * @returns {arr} returns reversed array in same place
+ * @param {Array} arr of any data type
+ * @retuns {Array} reversed.
  */
 function reverseArrayInPlace(arr) {
-    let temp = [];
-    let len = arr.length;
-    for (let i = 0; i < len; i++) {
-
-        temp.push(arr.pop());
-    }
-    for (let i = 0; i < len; i++) {
-        arr.unshift(temp.pop());
+    for (let i = 0; i < Math.floor((arr.length) / 2); i++) {
+        let temp = arr[i];
+        arr[i] = arr[arr.length - 1 - i];
+        arr[arr.length - 1 - i] = temp;
     }
     return arr;
 }
 /**
  * 
- * @param {number} studentAnswers input 
- * @param {number} correctAnswers that are correct
- * @returns {number} count of correct answers
- * 
+ * @param {Array} studentAnswers student scores
+ * @param {Array} correctAnswers correct answers
+ * @returns {Array} array of result 
  */
 function scoreExams(studentAnswers, correctAnswers) {
     const result = [];
@@ -120,20 +116,24 @@ function scoreExams(studentAnswers, correctAnswers) {
 }
 /**
  * 
- * @param {number} num1 input1
- * @param {number} num2 input2
- * @returns {array} array is returned 
+ * @param {Number} num1 number of row
+ * @param {Number} num2 number of colomn
+ * @returns{Array} multidimeonsinal array.
  */
 function generateArray(num1, num2) {
-    let multiArray = [];
-    let index = 1;
+    const arr = [];
+    let counter = 1;
+
     for (let i = 0; i < num1; i++) {
-        let array = [];
         for (let j = 0; j < num2; j++) {
-            array.push(index);
-            index++;
+            arr[i] = [];
         }
-        multiArray.push(array);
     }
-    return multiArray;
+    for (let i = 0; i < num1; i++) {
+        for (let j = 0; j < num2; j++) {
+            arr[i][j] = counter;
+            counter++;
+        }
+    }
+    return arr;
 }
