@@ -2,7 +2,7 @@
 
 /* You need the module.exports when testing in node.  Comment it out when you send your file to the browser
  */
-//module.exports = { double, times100 }; //add all of your function names here that you need for the node mocha tests
+// module.exports = { double, times100, myMap }; //add all of your function names here that you need for the node mocha tests
 
 /**
  * @param {number} num input number
@@ -23,6 +23,14 @@ function times100(num) {
 
 
 /**
+ * @param {Array} arr input
+ * @param {function} func input
  * @returns {Array} creates a new array with function mapped to each element
  */
-// function myMap() {}
+function myMap(arr, func) {
+    let newArray = [];
+    for (let i = 0; i < arr.length; i++) {
+        newArray[i] = func(arr[i]);
+    }
+    return newArray;
+}
