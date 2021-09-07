@@ -1,5 +1,5 @@
-import { showAuthors, showTitles, scramble } from './app';
 "use strict";
+import { findAuthors, findTitles, findIDs, addBook } from './app';
 /*  comment out the exports when running in the browser */
 const assert = require("assert"); //always need this with node
 // const myExports = require("./app.js"); //with node need the name of your file with your functions here
