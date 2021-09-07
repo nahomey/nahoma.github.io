@@ -3,7 +3,7 @@
 
 <head>
     <title>Book List</title>
-    <script src="app.js"></script>
+    <script src="./app.js"></script>
 </head>
 
 <body>
@@ -17,9 +17,16 @@
         <br />
         <input type="text" id="author" size="80" />
     </p>
+    <p>
+        Library-ID
+        <br />
+        <input type="text" id="id" size="80" />
+    </p>
 
     <input type="button" value="Add book to library" id="addBtn" onclick="addBook();" />
-    <input type="button" value="Show titles" id="titlesBtn" onclick="showTitles();" />
+    <input type="button" value="Show titles" id="titlesBtn" onclick="findTitles();" />
+    <input type="button" value="Show Author" id="authorBtn" onclick="findAuthors();" />
+    <input type="button" value="Show ID" id="IDBtn" onclick="findIDs();" />
     <input type="button" value="Scramble" id="scrambleBtn" onclick="scramble();" />
 
     <p>
