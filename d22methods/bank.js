@@ -32,27 +32,31 @@ bank.debit = function(id, amount) {
     //IMPLEMENT THIS
     const balance = this.getBalance(id);
     const currentBalance = balance;
-    if (currentBalance > amount) {
-        return;
-    }
-    currentBalance.balance -= amount;
-    this.saveTransaction(id, amount);
+    if (amount > currentBalance) {
+        return "no transaction";
+    } else
+        return currentBalance.balance -= amount;
 
 };
 
 bank.credit = function(id, amount) {
-    const balance = this.getBalance(id);
-    balance.balance += amount;
+    // const balance = this.getBalance(id);
+    // balance.balance += amount;
     this.saveTransaction(id, amount);
 }
 
 bank.getBalance = function(id) {
     //IMPLEMENT THIS
-    for (let key of saveTransaction) {
-        if (key.customerId === id) {
-            let sum = key.customerId
+    let sum = 0;
+    for (let i = 0; i < bank.transactionsDB.length; i++) {
+        if (bank.transactionsDB[i].customerId === id) {
+            for (let key of bank.transactionsDB[i].customerTransactions) {
+                sum += key;
+            }
+            return sum;
         }
     }
+    return;
 
 };
 
@@ -63,16 +67,19 @@ bank.getBalance = function(id) {
 bank.bankBalance = function() {
     //IMPLEMENT THIS
     let sum = 0;
-    for (let memebers of saveTransaction) {
-        memebers.currentBalance.customerI
+    for (let i = 0; i < bank.transactionsDB.length; i++) {
+        for (let j = 0; j < bank.transactionsDB[i].customerTransactions.length; j++) {
+            sum += bank.transactionsDB[i].customerTransactions[j];
+        }
     }
+    return sum;
 };
 
-console.log("total balance should be 85: ", bank.bankBalance());
-bank.credit(1, 20);
-bank.debit(1, 1000);
-console.log("total should now be 105: ", bank.bankBalance());
+// console.log("total balance should be 85: ", bank.bankBalance());
+// bank.credit(1, 20);
+// bank.debit(1, 1000);
+// console.log("total should now be 105: ", bank.bankBalance());
 
 /* You need the module.exports when testing in node.  Comment it out when you send your file to the browser */
 /* must be at end of file if are exporting an object so the export is after the definition */
-module.exports = { bank }; //add all of your object names here that you need for the node mocha tests
+// module.exports = { bank }; //add all of your object names here that you need for the node mocha tests
