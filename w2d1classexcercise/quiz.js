@@ -1,4 +1,5 @@
 "use strict";
+
 // const numbers = [{
 //     one: 1,
 //     two: 22,
@@ -63,8 +64,55 @@
 //     return score;
 // }
 
-let xxx = 9;
-xxx = function() {
-    console.log(4);
-}
-console.log(xxx);
+
+// quiz 5  true or false
+
+// The following will log true to the console.
+// const a = {};
+// const b = {};
+// console.log(a === b);
+
+// const aaa = 5;
+// const bbb = 5;
+// console.log(aaa === bbb);
+
+// const aaa = { name: "John", age: 10 };
+// const bbb = { name: "John", age: 10 };
+// console.log(aaa === bbb);
+
+// const aaa = { name: "John", age: 10 };
+// const bbb = aaa;
+// console.log(aaa === bbb);
+
+// const aaa = { name: "John", age: 10 };
+// const bbb = aaa;
+// bbb.name = "alex";
+// bbb.age = 65;
+// console.log(aaa === bbb);
+
+// let baz = "" + 33 + 10;
+// console.log(baz === 43);
+
+// The following will give an error message:
+// const aaa = 5;
+// aaa = 6;
+
+// The following will give an error message:
+// const aaa = { xxx: 5 };
+// aaa.xxx = 6;
+
+// The following will give an error message.
+// const a = { x: 5 };
+// a = { x: 6 };
+
+// const gradeReport = { s101: 3, s102: 2, s103: 3 };
+
+// Write afunction, averageScore, that takes the grade report object
+// and returns the average score of all the students.Your
+
+// function should work
+// for any number of students, but
+// if you are not sure how to do that at least make it work
+// for
+// the given 3 students.Hint: to handle any number remember the
+// for..in slide.
