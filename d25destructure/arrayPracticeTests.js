@@ -2,13 +2,14 @@
 /* global assert doubleNums  doubleAges filterEven filterOver10 findEvenNum findEvenAge */
 // comment out the node specific code when going to the browser
 const assert = require("assert"); //always need this with node
-const myExports = require("./arrayPractice.js"); //with node need the name of your file with your functions here
-const doubleNums = myExports.doubleNums; //do this for all of the functions used in the Mocha tests
-const doubleAges = myExports.doubleAges;
-const filterEven = myExports.filterEven;
-const filterOver10 = myExports.filterOver10;
-const findEvenNum = myExports.findEvenNum;
-const findEvenAge = myExports.findEvenAge;
+// const myExports = require("./arrayPractice.js"); //with node need the name of your file with your functions here
+// const doubleNums = myExports.doubleNums; //do this for all of the functions used in the Mocha tests
+// const doubleAges = myExports.doubleAges;
+// const filterEven = myExports.filterEven;
+// const filterOver10 = myExports.filterOver10;
+// const findEvenNum = myExports.findEvenNum;
+// const findEvenAge = myExports.findEvenAge;
+// const includesEvenAge = myExports.includesEvenAge
 
 
 let numArray;
@@ -17,7 +18,8 @@ let peopleArray;
 describe("map practice", function() {
     beforeEach(function() {
         numArray = [5, 0, 7, 77, -20, 300, 51, 2];
-        peopleArray = [{ name: "Sam", age: 15 },
+        peopleArray = [
+            { name: "Sam", age: 15 },
             { name: "William", age: 6 },
             { name: "Lucy", age: 13 },
             { name: "Barney", age: 80 }
@@ -94,6 +96,8 @@ describe("filter practice", function() {
     });
 
     /* complete the following similar to includes even test */
-    it("includes even age -- write this test");
+    it("includes even age ", function() {
+        assert.strictEqual(includesEvenAge(peopleArray), true);
+    });
 
 });

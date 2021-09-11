@@ -1,7 +1,7 @@
 "use strict"
 /* eslint-disable */
 /* You need the module.exports when testing in node.  Comment it out when you send your file to the browser */
-module.exports = { doubleNums, doubleAges, filterEven, filterOver10, findEvenNum, findEvenAge, includesEvenNum, includesEvenAge }; //add all of your function names here that you need for the node mocha tests
+// module.exports = { doubleNums, doubleAges, filterEven, filterOver10, findEvenNum, findEvenAge, includesEvenNum, includesEvenAge }; //add all of your function names here that you need for the node mocha tests
 
 
 function doubleNums(arr) {
@@ -41,9 +41,8 @@ function includesEvenNum(arr) {
 }
 
 function includesEvenAge(arr) {
-    let result = arr.find(item => item % 2 == 0);
-    if (result == undefned) return false;
+    let result = arr.find(item => item.age % 2 == 0);
+    if (result == undefined) return false;
     return true;
-
 
 }
