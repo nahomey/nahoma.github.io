@@ -36,13 +36,16 @@ function findEvenAge(arr) {
 }
 
 function includesEvenNum(arr) {
-    return arr.includes(item => item % 2 == 0);
-
+    for (let x of arr) {
+        if (x % 2 === 0) return true
+    }
+    return false;
 }
 
 function includesEvenAge(arr) {
-    let result = arr.find(item => item.age % 2 == 0);
-    if (result == undefined) return false;
-    return true;
+    for (let x of arr) {
+        if (x.age % 2 === 0) { return true };
 
+    }
+    return false;
 }
