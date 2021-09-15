@@ -11,10 +11,10 @@ Comment these out when you send it to the browser with the index.html mocha setu
 // const fibonacci = myExports.fibonacci;
 
 /* the following are for Thursday */
-const outputList = myExports.outputList;
-const outputListLoop = myExports.outputListLoop;
-const reverseList = myExports.reverseList;
-const reverseListLoop = myExports.reverseListLoop;
+// const outputList = myExports.outputList;
+// const outputListLoop = myExports.outputListLoop;
+// const reverseList = myExports.reverseList;
+// const reverseListLoop = myExports.reverseListLoop;
 
 
 let list = {
